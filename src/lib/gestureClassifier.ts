@@ -1,7 +1,7 @@
 // Rule-based gesture classification using MediaPipe hand landmarks
 // Landmark indices: https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker
 
-export type GestureName = "Hello" | "Yes" | "No" | "Help" | "Stop" | "Thank You" | "Unknown";
+export type GestureName = "Hello" | "Yes" | "No" | "Help" | "Stop" | "Thank You" | "I Love You" | "Peace" | "Call Me" | "OK" | "Unknown";
 
 export interface Landmark {
   x: number;
