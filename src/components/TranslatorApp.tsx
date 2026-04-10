@@ -90,7 +90,7 @@ export function TranslatorApp() {
                   <div className="text-center space-y-2">
                     <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">Demo Mode</p>
                     <p className="text-6xl">{
-                      { Hello: "👋", Yes: "👍", No: "✌️", Help: "✊", Stop: "🖐️", "Thank You": "🤚" }[demoGesture] || "👋"
+                      { Hello: "👋", Yes: "👍", No: "✌️", Help: "✊", Stop: "🖐️", "Thank You": "🤚", "I Love You": "🤟", Peace: "✌️", "Call Me": "🤙", OK: "👌" }[demoGesture] || "👋"
                     }</p>
                   </div>
                 </div>
