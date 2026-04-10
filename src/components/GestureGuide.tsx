@@ -1,10 +1,14 @@
 const gestures = [
   { name: "Hello", desc: "Open hand, fingers together", icon: "👋" },
   { name: "Yes", desc: "Thumbs up, fist closed", icon: "👍" },
-  { name: "No", desc: "Peace sign (index + middle)", icon: "✌️" },
+  { name: "No", desc: "Index + middle together", icon: "✌️" },
   { name: "Help", desc: "Closed fist, thumb tucked", icon: "✊" },
   { name: "Stop", desc: "Open hand, fingers spread", icon: "🖐️" },
   { name: "Thank You", desc: "Fingers up, thumb tucked", icon: "🤚" },
+  { name: "I Love You", desc: "Index, pinky & thumb up (ASL)", icon: "🤟" },
+  { name: "Peace", desc: "Index + middle spread apart", icon: "✌️" },
+  { name: "Call Me", desc: "Thumb & pinky extended", icon: "🤙" },
+  { name: "OK", desc: "Thumb & index circle, rest up", icon: "👌" },
 ];
 
 export function GestureGuide({ currentGesture }: { currentGesture: string }) {

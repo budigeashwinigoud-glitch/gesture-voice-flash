@@ -65,22 +65,48 @@ export function classifyGesture(landmarks: Landmark[], handedness: string = "Rig
     return "Hello";
   }
 
+  // I LOVE YOU: Index, pinky and thumb extended, middle and ring curled (ASL ILY)
+  if (thumb && index && !middle && !ring && pinky) {
+    return "I Love You";
+  }
+
+  // CALL ME: Thumb and pinky extended, others curled (shaka/phone)
+  if (thumb && !index && !middle && !ring && pinky) {
+    return "Call Me";
+  }
+
   // YES: Fist with thumb up
   if (thumb && fingersCurled(landmarks)) {
     return "Yes";
   }
 
-  // NO: Index and middle extended, others curled (peace sign variation / wagging finger)
+  // PEACE: Index and middle extended, spread apart, others curled
+  if (index && middle && !ring && !pinky) {
+    const fingerSpread = distance(landmarks[8], landmarks[12]);
+    if (fingerSpread > 0.06) {
+      return "Peace";
+    }
+  }
+
+  // NO: Index and middle extended, others curled (peace sign variation)
   if (index && middle && !ring && !pinky) {
     return "No";
   }
 
-  // HELP: Fist on open palm - simplified to fist (all curled including thumb)
+  // OK: Thumb and index form a circle, others extended
+  if (middle && ring && pinky) {
+    const thumbIndexDist = distance(landmarks[4], landmarks[8]);
+    if (thumbIndexDist < 0.06) {
+      return "OK";
+    }
+  }
+
+  // HELP: Fist (all curled including thumb)
   if (!thumb && fingersCurled(landmarks)) {
     return "Help";
   }
 
-  // THANK YOU: Flat hand touching chin then moving out - simplified to all fingers extended, hand tilted
+  // THANK YOU: All fingers extended, thumb tucked
   if (allUp && !thumb) {
     return "Thank You";
   }
