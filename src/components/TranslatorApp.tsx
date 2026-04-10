@@ -6,7 +6,7 @@ import { GestureGuide } from "@/components/GestureGuide";
 import { Button } from "@/components/ui/button";
 import { Camera, CameraOff, Volume2, RotateCcw, Zap } from "lucide-react";
 
-const DEMO_GESTURES = ["Hello", "Yes", "Thank You", "Stop", "No", "Help"] as const;
+const DEMO_GESTURES = ["Hello", "Yes", "Thank You", "Stop", "No", "Help", "I Love You", "Peace", "Call Me", "OK"] as const;
 
 export function TranslatorApp() {
   const { videoRef, canvasRef, status, gesture, isRunning, start, stop, fps } = useHandDetection();
@@ -90,7 +90,7 @@ export function TranslatorApp() {
                   <div className="text-center space-y-2">
                     <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">Demo Mode</p>
                     <p className="text-6xl">{
-                      { Hello: "👋", Yes: "👍", No: "✌️", Help: "✊", Stop: "🖐️", "Thank You": "🤚" }[demoGesture] || "👋"
+                      { Hello: "👋", Yes: "👍", No: "✌️", Help: "✊", Stop: "🖐️", "Thank You": "🤚", "I Love You": "🤟", Peace: "✌️", "Call Me": "🤙", OK: "👌" }[demoGesture] || "👋"
                     }</p>
                   </div>
                 </div>
